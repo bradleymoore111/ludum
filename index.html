@@ -12,6 +12,9 @@
 	<input type="text" id="chatbox">
 	<input type="button" id="clickme" onclick="submitStuff()" value="CLICKME">
 
+	<br><br>
+	<p>Clear chat log</p>
+	<input type="button" onclick="clearChat()" value="Clear chat">
 	<p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 	<div id="log">
 	
@@ -38,7 +41,6 @@
 			onUpdate(data);
 		}
 		function onUpdate(stuff){
-			console.log(stuff);
 			document.getElementById("log").innerHTML="";
 			for(key in stuff){
 				var idk = document.createElement("p");
@@ -55,6 +57,10 @@
 			box = document.getElementById("namez");
 			box.innerText = "Your current name is "+name;
 		}
+		function clearChat(){
+			fb.remove();
+		}
+
 		showName()
 		setInterval(function(){onUpdate(data)},500);
 	</script>
