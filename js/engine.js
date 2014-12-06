@@ -30,3 +30,11 @@ Entity.prototype.move = function(d) {									// left = 0, up = 1, right = 2, do
 	}
 	drawShit(); 
 };
+function openDoor(e){
+	console.log("here");
+	var tx=ents[e].x,ty=ents[e].y,tw=ents[e].w,th=ents[e].h;
+	ents[e] = new Entity("open-door",tx,ty,tw,th);
+	ents[e].col = false;
+	drawShit();
+	colmap[ents[e].x/sizex][ents[e].y/sizey]=0;
+}
