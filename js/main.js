@@ -7,15 +7,16 @@ function main(){ 											// Runs onload of body
 		}
 	}	
 	map = new Entity("map",0,0,w,h);						//
-	ents[0] = new Entity("snowbro",0,0,sizex,speedy);			// Creates our entity to play with for now
-															// Creates our entity to play with for now
-	ents[1] = new Entity("cate",sizex,sizey,sizex,sizey);	//
+	ents[0] = new Entity("snowbro",0,0,sizex,speedy);		// Creates our entity to play with for now
+	ents[1] = new Entity("cate",sizex,sizey,sizex,sizey);	// Creates our entity to play with for now
 	for(var j=0;j<9;j++){
 		ents[2+j] = new Entity("black",w/2,j*sizey,sizex,sizey);
 	}
 	for(var j=0;j<9	;j++){
 		ents[11+j] = new Entity("black",w/2,(j+11)*sizey,sizex,sizey);
 	}
+	ents[20] = new Entity("closed-door",w/2,9*sizey,sizex,sizey);
+	ents[21] = new Entity("closed-door",w/2,10*sizey,sizex,sizey);
 
 	drawShit(); 											// Initial render
 	document.addEventListener('keydown', function(event) { 	// Keyboard input manager
