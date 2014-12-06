@@ -2,8 +2,9 @@ var Entity = function Entity(inputName,ix,iy,iw,ih){
 	this.name=inputName;
 	this.x=ix; 															// Are going from the top left corner
 	this.w=iw;															// of the resource image, like a mouse
-	this.y=iy; 															
-	this.h=ih;												
+	this.y=iy;
+	this.h=ih;
+	this.direction=0;													// left = 0, up = 1, right = 2, down = 3
 	this.resource="resources/"+inputName+".png";						// Each resource will be it's name.png,
 	this.img=new Image();												// referenced from the resources folder as
 	this.img.src=this.resource;											// viewed from index.html, not from the js
@@ -13,6 +14,7 @@ var Entity = function Entity(inputName,ix,iy,iw,ih){
 }
 Entity.prototype.move = function(d) {									// left = 0, up = 1, right = 2, down = 3
 	var ox = this.x,oy = this.y;
+	this.direction = d;													// Keep trrack of the last direction input to tell what direction we are pointing at
 	if(d%2==0){ 														// Is it even, can only be 0 or 2, thus left or right, so horizontally, or working with x
 		var tempx = this.x - (speedx - (d*speedx)); 					// Generate value without collision
 		if(tempx>w-this.w||tempx<0||(this.col&&colmap[tempx/sizex][this.y/sizey])){ // Check if new position would be out of map
