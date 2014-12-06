@@ -5,18 +5,33 @@ function main(){ 											// Runs onload of body
 	h = canvas.height; 										// Easy access variables
 	w = canvas.width;
 	ents[0] = new Entity("doge"); 							// Creates our entity to play with for now
-	ents[0].draw(); 										// Initial placement
+	ents[1] = new Entity("cate");
+	drawShit(); 										// Initial render
 	document.addEventListener('keydown', function(event) { 	// Keyboard input manager
 		if (event.keyCode > 36 && event.keyCode < 41){ 		// 37 is left, 38 is up, 39 is right, 40 is down
 			move(ents[0],event.keyCode-37); 				// for 4 directions, left, up, right, down, condenses to 0-3
+		}else if (event.keyCode == 87){
+			move(ents[1],1);
+		}else if (event.keyCode == 65){
+			move(ents[1],0);
+		}else if (event.keyCode == 83){
+			move(ents[1],3);
+		}else if (event.keyCode == 68){
+			move(ents[1],2);
 		}
 	}, true);
+
 }
-function load(){
+function load(j){
 	imgs--;
 	if(imgs==0){
-						// todo: for each element in ents, load it
-		ents[0].draw(); // for now, ents[0]
+		drawShit();
+	}
+}
+function drawShit(){
+	clear();
+	for(var k=0;k<ents.length;k++){
+		ents[k].draw();
 	}
 }
 // left = 0, up = 1, right = 2, down = 3
@@ -32,8 +47,7 @@ function move(e, d) { 							// e is an entity, d is direction
 			return 0; 							// Break out of move() before new position is set, so no need to redraw
 		}e.y = temp; 							// Set new position
 	}
-	clear(); 									// Clear rectangle
-	e.draw(); 									// Redraw image with new position
+	drawShit(); 									// Redraw image with new position
 }
 
 var Entity = function Entity(inputName){
@@ -44,10 +58,10 @@ var Entity = function Entity(inputName){
 	this.h=50;
 	this.resource=inputName+".png";				// Each resource will be it's name.png
 	this.img=new Image();
-    this.img.src=this.resource;
-    this.img.onload=function(){
-    	load();									// Could be used later for loading bar, making things clean
-    }
+	this.img.src=this.resource;
+	this.img.onload=function(){
+		load();									// Could be used later for loading bar, making things clean
+	}
 	this.collision=0;							// Implemented later for collision
 	this.draw = function () {					// Draw is now a method within each ent
 		ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
