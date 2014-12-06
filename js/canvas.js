@@ -12,8 +12,8 @@ function initCanvas(firstTime){
 	// w and h need to be in a ratio of 2 to 1, and divisible by 10, while also being small.
 	// Time for some math to make sure a whole bunch of conditions are possible, while also
 	// having a flexible viewport
-	tw-=2;
-	th-=2;
+	// tw-=2;
+	// th-=2;
 	while(tw>2*th){
 		tw--;
 	}
