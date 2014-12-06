@@ -1,4 +1,4 @@
-var canvas,ctx,h,w;	// Initializing global canvas variables
+var canvas,ctx,h,w,sizes;	// Initializing global canvas variables
 /*window.onresize=setSizes;
 window.addEventListener('resize',setSizes);
 function setSizes(){
@@ -38,7 +38,7 @@ function initCanvas(firstTime){
 function drawShit(){
 	ctx.clearRect(0,0,w,h)
 	map.draw();
-	for(var k=0;k<ents.length;k++){
+	for(k in ents){
 		ents[k].draw();
 	}
 }
