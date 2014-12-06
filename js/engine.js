@@ -1,9 +1,9 @@
-var Entity = function Entity(inputName){
+var Entity = function Entity(inputName,ix,iy,iw,ih){
 	this.name=inputName;
-	this.x=0; 												// Are going from the top left corner
-	this.w=50;												// of the resource image, like a mouse
-	this.y=0; 												// 
-	this.h=50;												//
+	this.x=ix; 												// Are going from the top left corner
+	this.w=iw;												// of the resource image, like a mouse
+	this.y=iy; 												// 
+	this.h=ih;												//
 	this.resource="resources/"+inputName+".png";			// Each resource will be it's name.png,
 	this.img=new Image();									// referenced from the resources folder as
 	this.img.src=this.resource;								// viewed from index.html, not from the js
@@ -25,5 +25,6 @@ var Entity = function Entity(inputName){
 			}this.y = temp; 								// Set new position
 		}													//
 		drawShit(); 										// Redraw image with new position
+		console.log(this.name)
 	}
 }

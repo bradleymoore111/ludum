@@ -1,11 +1,12 @@
-var canvas,ctx,h,w,speed=50,imgs=1,ents=[];					// Initialalizing variables for global access
+var canvas,ctx,h,w,speed=50,imgs=1,ents=[],map;					// Initialalizing variables for global access
 function main(){ 											// Runs onload of body
 	canvas = document.getElementById("canvas"); 			// Initializing canvas
 	ctx = canvas.getContext('2d');							//
 	h = canvas.height; 										// Easy access variables
 	w = canvas.width;										//
-	ents[0] = new Entity("doge"); 							// Creates our entity to play with for now
-	ents[1] = new Entity("cate");							//
+	map = new Entity("map",0,0,w,h);
+	ents[0] = new Entity("doge",0,0,50,50); 							// Creates our entity to play with for now
+	ents[1] = new Entity("cate",50,50,50,50);							//
 	drawShit(); 											// Initial render
 	document.addEventListener('keydown', function(event) { 	// Keyboard input manager
 		var key = event.keyCode;							//
