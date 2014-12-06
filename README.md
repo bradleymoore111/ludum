@@ -7,8 +7,6 @@ Built for [Ludem Dare 31](http://ludumdare.com/).
 
 ## Credits
 
-Chrizelle Soon - Sprites
+Darien Quintanilla & Chrizelle Soon - Sprite and concept work
 
-Bradley Gallon - Programming & Game Design
-
-Max Wofford - Programming & Game Design
+Bradley Gallon & Max Wofford - Programming & Game Design
