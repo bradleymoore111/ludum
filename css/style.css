@@ -19,3 +19,14 @@ body, html {
 	margin: 0px;
 	background: #E3595B;
 }
+#banner {
+	color: white;
+	/*margin-top: -50%;*/
+	width: 100%;
+	position: fixed;
+	top: 50%;
+	background: rgba(0,0,0,0.5);
+}
+.hidden {
+	display: none;
+}

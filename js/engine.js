@@ -72,10 +72,32 @@ function find(sent){ // Move to India
 		}
 	}
 }
-function writeLog(message,charecter) {
+function writeLog(message,charecter){
 	var log = document.createElement('p');
 	var logContainer = document.getElementById('notification');
 	log.innerText = message;
 	log.className = charecter;
 	logContainer.insertBefore(log,logContainer.firstChild);
+}
+function writeBanner(heading,description){
+	var banner = document.getElementById('banner');
+	banner.className = '';
+	banner.innerHTML = '';
+
+	var title = document.createElement('h1');
+	title.innerText = heading;
+	banner.appendChild(title);
+	if (description) {
+		var paragraph = document.createElement('h3');
+		paragraph.innerText = description;
+		banner.appendChild(paragraph);
+	};
+
+	var click = document.createElement('p');
+	click.innerText = '(click to continue)';
+	banner.appendChild(click);
+}
+function hideBanner() {
+	var banner = document.getElementById('banner');
+	banner.className = 'hidden';
 }
