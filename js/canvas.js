@@ -29,6 +29,7 @@ function init(firstTime){
 	sizey = h;
 	w*=	mapRatio;
 	h*= mapRatio;
+	document.getElementById("notification").style.width=w;
 	canvas = document.getElementById("canvas");
 	canvas.width = w;
 	canvas.height = h;	

@@ -3,3 +3,19 @@ body, html {
 	padding: 0px;
 	text-align: center;
 }
+
+#notification { 
+	overflow: scroll;
+	border: 1px black solid;
+	color: white;
+	margin: 0 auto;
+	max-height: 5em;
+}
+.snowbro {
+	margin: 0px;
+	background: #79BDEB;
+}
+.guy {
+	margin: 0px;
+	background: #E3595B;
+}
