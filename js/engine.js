@@ -71,6 +71,9 @@ function find(sent){ // Move to India
 		}
 	}
 }
-function write(message){
-	document.getElementById("l").innerHTML = message;
+function writeLog(message,charecter) {
+	var log = document.createElement('p');
+	log.innerText = message;
+	log.className = charecter;
+	document.getElementById('notification').appendChild(log);
 }
