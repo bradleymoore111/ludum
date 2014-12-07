@@ -1,8 +1,22 @@
-var speedx,speedy,sizex,sizey,imgs=3,ents=[],map;			// Initializing global game variables
+var speedx,speedy,sizex,sizey,imgs=3,ents=[],map,colmap=[[]];	// Initializing global game variables
 function main(){ 											// Runs onload of body
+	for(var j=0;j<mapRatio*2;j++){
+		colmap[j]=[];
+		for(var k=0;k<mapRatio;k++){
+			colmap[j][k]=0;
+		}
+	}	
 	map = new Entity("map",0,0,w,h);						//
 	ents[0] = new Entity("snowbro",0,0,sizex,speedy);			// Creates our entity to play with for now
-	ents[1] = new Entity("cate",0,0,sizex,speedy);			//
+															// Creates our entity to play with for now
+	ents[1] = new Entity("cate",sizex,sizey,sizex,sizey);	//
+	for(var j=0;j<9;j++){
+		ents[2+j] = new Entity("black",w/2,j*sizey,sizex,sizey);
+	}
+	for(var j=0;j<9	;j++){
+		ents[11+j] = new Entity("black",w/2,(j+11)*sizey,sizex,sizey);
+	}
+
 	drawShit(); 											// Initial render
 	document.addEventListener('keydown', function(event) { 	// Keyboard input manager
 		var key = event.keyCode;							//
