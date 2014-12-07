@@ -6,9 +6,15 @@
 	<script src="js/engine.js"></script>
 	<script src="js/canvas.js"></script>
 </head>
-<body onload="initCanvas(true)">
+<body onload="init(true)">
+	<div id="left" style="float:left"><p id="l"></p></div>
 	<div id="idk">
-		<canvas id="canvas"></canvas>
+		<canvas id="canvas" style="border:1px solid black;float:left"></canvas>
 	</div>
+	<div id="right" style="float:left"><p id="r"></p></div>
+	<!--audio autoplay loop>
+		<source src="resources/peter.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio-->
 </body>
 </html>

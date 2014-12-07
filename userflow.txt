@@ -1,0 +1,11 @@
+Both characters start at bottom middle of screen, starting with the boy being first selectable character
+To teach movement, player is instructed to move to snow pile,
+To teach interaction, player is taught how to interact with snow pile
+To teach choices, player is alerted that the ice is going to crack, and if he doesn't hurry, it will thaw
+3 turns later, ice breaks, can no longer walk on ice. Player has choice to immediately cross without taking damage, or grab tools but have to take damage to cross later.
+If he hasn't crossed, will have to figure out
+This aids him in crossing the pond, or leave starting area
+He then can go into choices area, where there are tools to prolong his life/win the game
+AKA: trees to be shaken down for sticks, house to be lit on fire, tool shed with gas main, electrical wire somewhere
+But, after crossing pond, swaps to snowman
+Snowman spawns with full access except utility room, which contains thermostat
