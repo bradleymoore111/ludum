@@ -6,12 +6,12 @@ var Entity = function Entity(name,d,col){
 	this.img.src=this.resource;											// viewed from index.html, not from the js
 	this.img.onload=function(){load();}									// Could be used later for loading bar, making things clean 
 	this.col=col;														// Implemented later for collision	
-	this.activate=function(){write("Nothing to be activated!")};
+	this.activate=function(){writeLog("Nothing to be activated!",this.name)};
 }
 Entity.prototype.trigger = function(d) {
 	var p = find(this.name);
 	function no(){
-		write("Nothing to trigger!");
+		writeLog("Nothing to trigger!",this.name);
 		return 0;
 	}
 	if(d==0){
