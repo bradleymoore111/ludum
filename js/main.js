@@ -19,7 +19,7 @@ function main(){
 	entmap[18][19] = new Entity("snowbro",0,true);
 	entmap[22][19] = new Entity("guy_static",0,true);
 	// entmap[5][4].activate = function(){ // Example trigger system
-	// 	write("Triggered!");
+	// 	writeLog("Triggered!");
 	// }
 	entmap[9][2] = new Entity("closed-door",0,true); // Utility room door
 	entmap[9][3] = new Entity("closed-door",0,true);

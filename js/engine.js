@@ -6,12 +6,12 @@ var Entity = function Entity(name,d,col){
 	this.img.src=this.resource;											// viewed from index.html, not from the js
 	this.img.onload=function(){load();}									// Could be used later for loading bar, making things clean 
 	this.col=col;														// Implemented later for collision	
-	this.activate=function(){write("Nothing to be activated!")};
+	this.activate=function(){writeLog("Nothing to be activated!")};
 }
 Entity.prototype.trigger = function(d) {
 	var p = find(this.name);
 	function no(){
-		write("Nothing to trigger!");
+		writeLog("Nothing to trigger!");
 		return 0;
 	}
 	if(d==0){
@@ -29,6 +29,7 @@ Entity.prototype.trigger = function(d) {
 	}
 };
 Entity.prototype.move = function(d,x,y){
+	writeLog('I take a step',this.name)
 	// Lets do collision
 	var p = find(this.name); // p = previous location
 	if(d==0){ // left
@@ -73,7 +74,8 @@ function find(sent){ // Move to India
 }
 function writeLog(message,charecter) {
 	var log = document.createElement('p');
+	var logContainer = document.getElementById('notification');
 	log.innerText = message;
 	log.className = charecter;
-	document.getElementById('notification').appendChild(log);
+	logContainer.insertBefore(log,logContainer.firstChild);
 }
