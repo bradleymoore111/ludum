@@ -71,6 +71,3 @@ function find(sent){ // Move to India
 		}
 	}
 }
-function write(message){
-	document.getElementById("l").innerHTML = message;
-}

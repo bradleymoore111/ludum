@@ -29,7 +29,6 @@ function init(firstTime){
 	sizey = h;
 	w*=	mapRatio;
 	h*= mapRatio;
-	document.getElementById("left").style.width=125;
 	canvas = document.getElementById("canvas");
 	canvas.width = w;
 	canvas.height = h;	
