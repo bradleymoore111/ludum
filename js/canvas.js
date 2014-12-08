@@ -35,6 +35,7 @@ function init(firstTime){
 	canvas.height = h;	
 	ctx = canvas.getContext('2d');
 	if(firstTime){main();}
+	tutorial();
 }
 function resizeShit(){
 	init(false)

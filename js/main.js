@@ -77,11 +77,10 @@ function main(){
 		}else{
 			guy.turnedOnPower = true;
 			// Code to undim the left screen
-			writeLog("INFINITE POWER!","guy_static");
+			writeLog("The power is back on in the house!","guy_static");
+			writeBanner("The power is on", "Now that the power is back on, the house's thermostat starts to heat up. Find a way to save Snowman from melting and Guy from freezing!")
 		}
 	}
-
-	
 
 	entmap[21][18] = new Entity("onning-4",0,true); // Awning
 	entmap[22][18] = new Entity("onning-3",0,true);
@@ -90,7 +89,7 @@ function main(){
 	entmap[19][19] = new Entity("switch-right",0,true);
 	entmap[19][19].activate = function(){
 		if(!guy.turnedOnPower){ // If no power
-			writeLog("You need to turn on the power first!","snowbro");
+			writeLog("The power is out, and the awning doesn't move!","snowbro");
 		}else if(snowbro.hasRetractedAwning){
 			writeLog("You've already retracted the awning!","snowbro");
 		}else{
@@ -232,4 +231,8 @@ function main(){
 		}
 	}, true);
 	console.log("Debug commands:\nq = snowbro location\nc = dude location\ne = trigger boy\nf = trigger snowman");
+}
+
+function tutorial() {
+	writeBanner('A boy and his Snowman','Let\'s get started. Use the arrow keys to move. You can interact with the lever to your left by pressing \'e\'', function(){});
 }
