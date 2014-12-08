@@ -184,9 +184,8 @@ function main(){
 		}else if (key == 68){
 			entmap[s.x][s.y].move(2);
 		}else if (key == 69){
-			entmap[g.x][g.y].trigger(entmap[g.x][g.y].d);
-		}else if (key == 70){
-			entmap[s.x][s.y].trigger(entmap[s.x][s.y].d);
+			var c = find(currentCharecter);
+			entmap[c.x][c.y].trigger(entmap[c.x][c.y].d);
 		}else if (key == 81){
 			console.log(find("snowbro"));
 		}else if (key == 67){
