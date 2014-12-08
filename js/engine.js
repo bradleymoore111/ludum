@@ -1,3 +1,4 @@
+var currentCharecter;
 var Entity = function Entity(name,d,col){
 	this.name=name;
 	this.d=d;															// left = 0, up = 1, right = 2, down = 3
@@ -29,7 +30,8 @@ Entity.prototype.trigger = function(d) {
 	}
 };
 Entity.prototype.move = function(d,x,y){
-	writeLog('I take a step',this.name)
+	currentCharecter = this.name;
+	writeLog('I take a step')
 	// Lets do collision
 	var p = find(this.name); // p = previous location
 	if(d==0){ // left
@@ -73,6 +75,9 @@ function find(sent){ // Move to India
 	}
 }
 function writeLog(message,charecter){
+	if (!charecter) {
+		charecter = currentCharecter;
+	};
 	var log = document.createElement('p');
 	var logContainer = document.getElementById('notification');
 	log.innerText = message;
@@ -92,7 +97,6 @@ function writeBanner(heading,description){
 		paragraph.innerText = description;
 		banner.appendChild(paragraph);
 	};
-
 	var click = document.createElement('p');
 	click.innerText = '(click to continue)';
 	banner.appendChild(click);

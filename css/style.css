@@ -5,7 +5,7 @@ body, html {
 }
 
 #notification { 
-	overflow: scroll;
+	overflow: hidden;
 	border: 1px black solid;
 	color: white;
 	margin: 0 auto;
