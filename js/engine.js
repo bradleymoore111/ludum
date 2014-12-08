@@ -28,6 +28,7 @@ Entity.prototype.trigger = function(d) {
 		if(typeof entmap[p.x][p.y+1]!="object") no();
 		else entmap[p.x][p.y+1].activate();
 	}
+	setTimeout(drawShit(),500);
 };
 Entity.prototype.move = function(d,x,y){
 	currentCharecter = this.name;
