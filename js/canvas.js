@@ -41,11 +41,8 @@ function resizeShit(){
 	init(false)
 }
 
-function load(j){
-	imgs--;
-	if(imgs==0){
-		drawShit();
-	}
+function load(){
+	drawShit();
 }
 function drawShit(){
 	ctx.clearRect(0,0,w,h);
