@@ -166,6 +166,7 @@ function main(){
 			writeLog("You decide you're cold and light a fire and ");
 			setTimeout(function(){writeLog("OMFG YOU LIT YOUR HOUSE ON FIRE","guy_static")},500);
 			setTimeout(function(){writeLog("Well at least you're warm. Good game! You win :)","guy_static")},2000);
+			writeBanner('Good Game','You\'ve killed Snowman');
 		}
 	}
 
@@ -179,6 +180,7 @@ function main(){
 			setTimeout(function(){writeLog("WAIT WAIT WAIT YOU HAD A KEY, AND YOU STILL KILLED HIM?","snowbro")},5000);
 			setTimeout(function(){writeLog("Dude, you're a dick.","snowbro")},7000);
 		}
+		writeBanner('Good Game','You\'ve killed Guy');
 	}
 
 	entmap[4][2] = new Entity("table-4",0,true);
@@ -203,6 +205,7 @@ function main(){
 			entmap[20][7] = 0;
 			entmap[20][8] = 0;
 			writeLog("You open the door, and now you can go outside and be comfy, while your boy can keep himself warm. Good game!","snowbro");
+			writeBanner('Good Game','You\'ve saved both Guy and Snowbro!');
 		}
 	}
 	entmap[20][8].activate = entmap[20][7].activate;
