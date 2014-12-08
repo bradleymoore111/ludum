@@ -55,6 +55,7 @@ function main(){
 	snowbro = {
 		hasRetractedAwning:false,
 		hasOpenedGarage:false,
+		hasKey:false,
 	}
 
 	entmap[18][19] = new Entity("snowbro",0,true);
@@ -167,6 +168,14 @@ function main(){
 			setTimeout(function(){writeLog("OMFG YOU LIT YOUR HOUSE ON FIRE","guy_static")},500);
 			setTimeout(function(){writeLog("Well at least you're warm. Good game! You win :)","guy_static")},2000);
 		}
+	}
+
+	entmap[0][3] = new Entity("thermostat",0,true);
+	entmap[0][3].activate = function(){
+		writeLog("You're literally melting, so you turn off the heat.","snowbro");
+		setTimeout(function(){writeLog("And now the boy can't make a fire nor go anywhere warm!","snowbro")},1000);
+		setTimeout(function(){writeLog("You killed your boy.","snowbro")},1500);
+		setTimeout(function(){writeLog("Good game. Shame on you.","snowbro")},2000);
 	}
 
 	document.addEventListener('keydown', function(event) { 	
