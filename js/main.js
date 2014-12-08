@@ -174,9 +174,39 @@ function main(){
 	entmap[0][3].activate = function(){
 		writeLog("You're literally melting, so you turn off the heat.","snowbro");
 		setTimeout(function(){writeLog("And now the boy can't make a fire nor go anywhere warm!","snowbro")},1000);
-		setTimeout(function(){writeLog("You killed your boy.","snowbro")},1500);
-		setTimeout(function(){writeLog("Good game. Shame on you.","snowbro")},2000);
+		setTimeout(function(){writeLog("You killed your boy.","snowbro")},2000);
+		setTimeout(function(){writeLog("Good game. Shame on you.","snowbro")},3000);
+		if(snowbro.hasKey){
+			setTimeout(function(){writeLog("WAIT WAIT WAIT YOU HAD A KEY, AND YOU STILL KILLED HIM?","snowbro")},5000);
+			setTimeout(function(){writeLog("Dude, you're a dick.","snowbro")},7000);
+		}
 	}
+
+	entmap[4][2] = new Entity("table-4",0,true);
+	entmap[5][2] = new Entity("table-3",0,true);
+	entmap[5][1] = new Entity("table-2",0,true);
+	entmap[4][1] = new Entity("table-1",0,true);
+
+	entmap[4][1].activate = function(){
+		snowbro.hasKey = true;
+		entmap[4][1] = new Entity("table-1-no-key",0,true);
+		writeLog("DON'T ASK WHY IT'S LOCKED FROM THE INSIDE","snowbro");
+		writeLog("You've picked up a key, should open the front door.","snowbro");
+	}
+
+	entmap[20][7] = new Entity("closed-door",0,true);
+	entmap[20][8] = new Entity("closed-door",0,true);
+
+	entmap[20][7].activate = function(){
+		if(!snowbro.hasKey) {
+			writeLog("Locked. Damn");
+		}else{
+			entmap[20][7] = 0;
+			entmap[20][8] = 0;
+			writeLog("You open the door, and now you can go outside and be comfy, while your boy can keep himself warm. Good game!","snowbro");
+		}
+	}
+	entmap[20][8].activate = entmap[20][7].activate;
 
 	document.addEventListener('keydown', function(event) { 	
 		var key = event.keyCode;				
