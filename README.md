@@ -10,3 +10,7 @@ Built for [Ludem Dare 31](http://ludumdare.com/).
 Darien Quintanilla & Chrizelle Soon - Sprite and concept work
 
 Bradley Gallon & Max Wofford - Programming & Game Design
+
+Elie Nehme - Emotional/Moral Support
+
+Greta Studier - Donuts
