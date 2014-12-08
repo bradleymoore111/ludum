@@ -36,28 +36,28 @@ Entity.prototype.move = function(d,x,y){
 	var p = find(this.name); // p = previous location
 	if(d==0){ // left
 		this.d = 0;
-		if(p.x==0||entmap[p.x-1][p.y]!=0){
+		if(p.x==0||entmap[p.x-1][p.y].col==true){
 			return 0;
 		}
 		entmap[p.x-1][p.y] = this;
 	} // right
 	else if(d==2){
 		this.d = 2;
-		if(p.x==mapRatio*2-1||entmap[p.x+1][p.y]!=0){
+		if(p.x==mapRatio*2-1||entmap[p.x+1][p.y].col==true){
 			return 0;
 		}
 		entmap[p.x+1][p.y] = this;
 	}
 	else if(d==1){ // up
 		this.d = 1;
-		if(p.y==0||entmap[p.x][p.y-1]!=0){
+		if(p.y==0||entmap[p.x][p.y-1].col==true){
 			return 0;
 		}
 		entmap[p.x][p.y-1] = this;
 	}
 	else if(d==3){
 		this.d = 3;
-		if(p.y==mapRatio-1||entmap[p.x][p.y+1]!=0){
+		if(p.y==mapRatio-1||entmap[p.x][p.y+1].col==true){
 			return 0;
 		}
 		entmap[p.x][p.y+1] = this;
